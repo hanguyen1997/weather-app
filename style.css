@@ -44,7 +44,9 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
+img {
+	width: 100%;
+}
 .body {
 	width: 100%;
 	height: 100vh;
@@ -55,7 +57,7 @@ table {
 .container {
 	width: 271px;
     height: 577px; 
-    background-color: #101014;
+    background-color: #0c0cd42e;
     margin: auto;
     border-radius: 20px;
 }
@@ -66,7 +68,7 @@ table {
 	border-radius: 20px;
 }
 .home-header {
-    height: 20%;
+    height: 10%;
     padding: 15px;
     display: flex;
 }
@@ -96,7 +98,7 @@ table {
 }
 .them-light i {
 	padding: 5px;
-    background-color: red;
+    /*background-color: red;*/
     border-radius: 20px;
     font-size: 13px;
 }
@@ -105,7 +107,7 @@ table {
 }
 .them-dark i {
 	padding: 5px;
-    background-color: red;
+    background-color: white;
     border-radius: 20px;
     font-size: 13px;
 }
@@ -113,17 +115,66 @@ table {
 	width: 100%;
 	height: 50%;
 	color: blue;
-	background-image: url("img/beautiful world map_1122510.png");
+	margin-top: -40px;
+}
+.img-w {
+	width: 100%;
+    height: 200px;
+}
+.temperature {
+    padding-top: 10px;
+}
+.temperature h1 {
+	font-size: 20px;
+    color: #efefef;
+    font-weight: bold;
+    padding-left: 10px;
+    text-align: center;
+}
+.temperature h2 {
+	font-size: 89px;
+    color: #efefef;
+    font-weight: bold;
+    padding-left: 10px;
+    text-align: center;
 }
 .home-description {
 	width: 100%;
-	height: 20%;
-	color: yellow;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 23px;
+}
+.description-box {
+	width: 20%;
+    padding: 18px;
+}
+.description-box_img {
+	/*margin-bottom: 5px;*/
+}
+.description-box_time {
+	display: flex;
+    justify-content: center;
+}
+.description-box_time p{
+	font-size: 10px;
+    color: #929291;
+    margin: auto;
+    padding-bottom: 5px;
+}
+.description-box_temperature {
+	display: flex;
+    justify-content: center;
+}
+.description-box_temperature h2{
+	color: #dcdcd5;
 }
 .home-control {
 	width: 100%;
-	height: 10%;
-	color: black;
+    height: 10%;
+    color: black;
+    display: flex;
+    justify-content: space-around;
 }
 /*search*/
 .search {
