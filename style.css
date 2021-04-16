@@ -113,13 +113,21 @@ img {
 }
 .home-main {
 	width: 100%;
-	height: 50%;
+	/*height: 50%;*/
 	color: blue;
 	margin-top: -40px;
 }
 .img-w {
 	width: 100%;
-    height: 200px;
+    height: 180px;
+}
+.sun-img img {
+	width: 40px;
+    height: 40px;
+}
+.time-sun {
+	color: #dcdcd5;
+    font-size: 10px;
 }
 .temperature {
     padding-top: 10px;
@@ -128,29 +136,38 @@ img {
 	font-size: 20px;
     color: #efefef;
     font-weight: bold;
-    padding-left: 10px;
     text-align: center;
 }
 .temperature h2 {
 	font-size: 89px;
     color: #efefef;
     font-weight: bold;
-    padding-left: 10px;
     text-align: center;
+}
+.unit-dot {
+	color: #f9d65d;
+    font-weight: 48;
+    border-radius: 6px;
+    height: 6px;
+    margin-left: 4px;
+    margin-top: 7px;
+    position: absolute;
+    width: 0px;
+    font-size: 25px;
 }
 .home-description {
 	width: 100%;
-    height: 30%;
+    height: 25%;
     display: flex;
     justify-content: space-around;
-    padding-top: 23px;
 }
 .description-box {
 	width: 20%;
     padding: 18px;
 }
-.description-box_img {
-	/*margin-bottom: 5px;*/
+.the-sun {
+	display: flex;
+	justify-content: space-around;
 }
 .description-box_time {
 	display: flex;
