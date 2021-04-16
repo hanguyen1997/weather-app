@@ -6,6 +6,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="body">
@@ -13,8 +14,8 @@
 			<div class="home">
 				<div class="home-header">
 					<div class="home-header_add_time">
-						<p class="time">22, Them 2021</p>
-						<p class="add"><i class="fas fa-map-marker-alt"></i> london. <span style="color: #b0b0b1;font-size: 10px;">USA</span></p>
+						<p class="time" id="time">N/A</p>
+						<p class="add" id="add">N/A</p>
 					</div>
 					<div class="home-header_theme">
 						<div class="theme">
@@ -28,12 +29,12 @@
 					</div>
 				</div>
 				<div class="home-main">
-					<div class="img-w">
-						<img src="img/animated/cloudy.svg">
+					<div class="img-w" id="icons_weather">
+						<img style="margin-top: 14px; margin-left: 37px; width:200px; height:200px" src="img/load.jpg">
 					</div>
 					<div class="temperature">
 						<h1>thunder</h1>
-						<h2>13<span style="color: #f9d65d;font-weight: 50">°</span></h2>
+						<h2 id="content_weather">N/A</h2>
 					</div>
 				</div>
 				<div class="home-description">
@@ -91,5 +92,6 @@
 			</div>
 		</div>
 	</div>
+	<script src="js/home.js"></script>
 </body>
 </html>
