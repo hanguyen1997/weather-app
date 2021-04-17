@@ -1,20 +1,27 @@
 $(document).ready(function(){
-
 	var options = {year: 'numeric', day: 'numeric', month: 'long'};
 	var today  = new Date();
 	document.getElementById("time").innerHTML = today.toLocaleDateString("en-US", options);
 
 	/*get name city*/
-	$.ajax({
-	  url: "https://geolocation-db.com/jsonp",
-	  jsonpCallback: "callback",
-	  dataType: "jsonp",
-	  success: function(location) {
-	   var name_city = location.city;
-	   call_api(name_city)
-	  }
-	});
-})
+	var ip = "";
+	fetch("https://api.ipify.org/?format=json")
+		.then(response => {
+			return response.json();
+		})
+		.then(data => {
+			ip = data.ip;
+			fetch("http://ipinfo.io/"+ip+"?token=4bc04fcc59b844")
+			.then(response => {
+				return response.json();
+			})
+			.then(data => {
+				console.log(data);
+				name_city = data.city
+				call_api(name_city)
+			});
+		});
+});
 
 function call_api(name_city){
 	var api_key = "8a6782a545b721813285b2fb2f7fc8a2";
