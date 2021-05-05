@@ -97,22 +97,34 @@
 							</div>
 						</div>
 					</div>
-					<div class="search">
+					<div class="search" id="search">
 						
 					</div>
 					<div class="about" id="about">
-						
+						<h2 class="about-title">About</h2>
+						<p>App  Weather Application made with HTML / CSS / JS</p>
+						<p>This is a personal project built in my spare time for learning purposes.</p>
+						<h2 class="about-title">APIs</h2>
+						<ul class="about-list_api">
+							<li><a href="https://www.ipify.org/">Ipify (ip address)</a></li>
+							<li><a href="https://openweathermap.org/">Openweathermap (weather forecasting)</a></li>
+						</ul>
+						<div class="img-git">
+							<a href="https://github.com/hanguyen1997">
+								<img src="img/github.svg">
+							</a>
+						</div>
 					</div>
 					<div class="container-view_control">
 						<div class="home-control">
 							<div>
-								<i class="fas fa-home" style="color: white"></i>
+								<i class="fas fa-home" onclick="home()" id="icon-home"></i>
 							</div>
 							<div>
-								<i class="fas fa-search"></i>
+								<i class="fas fa-search" onclick="search()" id="icon-search"></i>
 							</div>
 							<div>
-								<i class="fas fa-user"></i>
+								<i class="fas fa-user" onclick="about()" id="icon-about"></i>
 							</div>
 						</div>
 					</div>
