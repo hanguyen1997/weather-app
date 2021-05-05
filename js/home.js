@@ -18,7 +18,17 @@ $(document).ready(function(){
 			.then(data => {
 				console.log(data);
 				name_city = data.city
-				call_api(name_city)
+				call_api(name_city);
+
+				let trani = function() {
+					document.getElementById("loading").style.display = "none"
+					document.getElementById("container-view").style.display = "block"
+				}
+				call_api(trani);
+				
+				//document.getElementById("loading").style.display = "none";
+				//setTimeout (document.getElementById("loading").style.display = "none", 3);
+				//setTimeout (document.getElementById("container-view").style.display = "block", 3);
 			});
 		});
 });
@@ -32,19 +42,6 @@ function call_api(name_city){
 			return response.json();
 		})
 		.then(data => {
-			// /*not found city*/
-			// if(data.cod == "404"){
-			// 	document.getElementById("notify-projcet").innerHTML = "<p>City not found</p>";
-			// 	return;
-			// }
-			// else document.getElementById("notify-projcet").innerHTML = "";
-			// /*end: if(data.code == "404")*/
-
-			// var icon = "<img src='http://openweathermap.org/img/wn/"+data.weather[0].icon+"@2x.png'>";
-			
-			// // var icon = "<img src='icons/black/png/256x256/"+data.weather[0].icon+".png'>";
-			// document.getElementById("icons_weather").innerHTML = icon;
-
 			var add = "<i class='fas fa-map-marker-alt'></i> "+name_city+". <span style='color: #b0b0b1;font-size: 10px;'>"+data.sys.country+"</span>";
 			document.getElementById("add").innerHTML = add;
 
@@ -100,8 +97,8 @@ function call_api(name_city){
               }
             });
             document.getElementById("next-day").innerHTML = wf;
-            
         }
     });
+    return true;
 }
 
