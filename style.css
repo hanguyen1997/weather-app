@@ -224,7 +224,35 @@ img {
 }
 /*about*/
 .about {
-
+    display: none;
+    padding: 20px;
+    line-height: 1.4;
+    padding-bottom: 45px;
+    font-family: monospace;
+}
+.about-title {
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+    padding: 20px 0px 20px 0px;
+}
+.about p {
+    color: #756f6f;
+    pointer-events: unset;
+    font-family: monospace;
+    margin: 10px 0px 10px 0px;
+}
+.about-list_api li{
+    padding-bottom: 5px;
+}
+.about-list_api li a{
+    text-decoration: none;
+    color: #756f6f;
+}
+.img-git {
+    width: 30%;
+    margin: 0 auto;
+    padding-top: 60px;
 }
 
 @keyframes pulsate1 {

@@ -24,7 +24,7 @@ $(document).ready(function(){
 					document.getElementById("loading").style.display = "none"
 					document.getElementById("container-view").style.display = "block"
 				}
-				call_api(trani);
+				setTimeout (call_api(trani), 300);
 				
 				//document.getElementById("loading").style.display = "none";
 				//setTimeout (document.getElementById("loading").style.display = "none", 3);
@@ -32,6 +32,16 @@ $(document).ready(function(){
 			});
 		});
 });
+
+function home() {
+	document.getElementById("home").style.display = "block";
+	document.getElementById("search").style.display = "none";
+	document.getElementById("about").style.display = "none";
+
+	document.getElementById("icon-home").style.color = "white";
+	document.getElementById("icon-search").style.color = "black";
+	document.getElementById("icon-about").style.color = "black";
+}
 
 function call_api(name_city){
 	var api_key = "8a6782a545b721813285b2fb2f7fc8a2";
@@ -60,6 +70,8 @@ function call_api(name_city){
 
 			var sunset = new Date(data.sys.sunset*1000).toLocaleTimeString("en-US", options);
 			document.getElementById("sunset").innerHTML = sunset;
+			
+			document.getElementById("icon-home").style.color = "white";
 		});
 
     var url = "https://api.openweathermap.org/data/2.5/forecast";
