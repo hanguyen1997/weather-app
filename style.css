@@ -61,11 +61,21 @@ img {
     margin: auto;
     border-radius: 20px;
 }
+#loading img{
+    margin-top: 120px;
+}
 /*home*/
 .home {
 	width: 100%;
 	height: 100%;
 	border-radius: 20px;
+    
+}
+.container-view {
+    display: none;
+}
+.container-view_control {
+    margin-top: 20px;
 }
 .home-header {
     height: 10%;
@@ -135,6 +145,10 @@ img {
 }
 .temperature {
     padding-top: 10px;
+    animation: 0.5s cubic-bezier(0.46, 0.45, 0.59, 0.82) 0s 1 textUp;
+    transition: transform .3s cubic-bezier(.165,.84,.44,1),opacity .3s ease-out;
+    will-change: transform,opacity;
+     display: block;
 }
 .temperature h1 {
 	font-size: 20px;
@@ -164,10 +178,17 @@ img {
     height: 25%;
     display: flex;
     justify-content: space-around;
+    margin-top: 15px;
+    animation: 1s cubic-bezier(0.46, 0.45, 0.33, 0.82) 0s 1 pulsate1
 }
+
 .description-box {
 	width: 20%;
-    padding: 18px;
+    padding: 15px;
+    border-right: 2px solid #504a4a;
+}
+.description-box:last-child {
+    border-right: none;
 }
 .the-sun {
 	display: flex;
@@ -204,4 +225,27 @@ img {
 /*about*/
 .about {
 
+}
+
+@keyframes pulsate1 {
+  0% {
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+  }
+}
+
+@keyframes textUp {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+        opacity: 1; 
+       
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
