@@ -1,9 +1,7 @@
 $(document).ready(function(){
-
 	var options = {year: 'numeric', day: 'numeric', month: 'long'};
 	var today  = new Date();
 	document.getElementById("time").innerHTML = today.toLocaleDateString("en-US", options);
-
 	/*get name city*/
 	var ip = "";
 	fetch("https://api.ipify.org/?format=json")
@@ -12,24 +10,25 @@ $(document).ready(function(){
 		})
 		.then(data => {
 			ip = data.ip;
-			fetch("http://ipinfo.io/"+ip+"?token=4bc04fcc59b844")
+			fetch("https://ipinfo.io/" + ip + "?token=4bc04fcc59b844")
 			.then(response => {
 				return response.json();
 			})
 			.then(data => {
 				console.log(data);
-				name_city = data.city
-				call_api(name_city);
+				// name_city = data.city
+				console.log(data.city);
+				call_api(data.city);
 
 				let trani = function() {
 					document.getElementById("loading").style.display = "none"
 					document.getElementById("container-view").style.display = "block"
 				}
 				setTimeout (call_api(trani), 300);
-
-				//document.getElementById("loading").style.display = "none";
-				//setTimeout (document.getElementById("loading").style.display = "none", 3);
-				//setTimeout (document.getElementById("container-view").style.display = "block", 3);
+				
+				document.getElementById("loading").style.display = "none";
+				setTimeout (document.getElementById("loading").style.display = "none", 3);
+				setTimeout (document.getElementById("container-view").style.display = "block", 3);
 			});
 		});
 });
@@ -47,26 +46,14 @@ function home() {
 function call_api(name_city){
 	var api_key = "8a6782a545b721813285b2fb2f7fc8a2";
 	var kelvin = 273;
-	var api_weather = "https://api.openweathermap.org/data/2.5/weather?q="+name_city+"&appid="+api_key;
+	console.log(name_city);
+	var api_weather = "https://api.openweathermap.org/data/2.5/weather?q=" + name_city + "&appid=" + api_key;
 	fetch(api_weather)
 		.then(response => {
 			return response.json();
 		})
 		.then(data => {
-			// /*not found city*/
-			// if(data.cod == "404"){
-			// 	document.getElementById("notify-projcet").innerHTML = "<p>City not found</p>";
-			// 	return;
-			// }
-			// else document.getElementById("notify-projcet").innerHTML = "";
-			// /*end: if(data.code == "404")*/
-
-			// var icon = "<img src='http://openweathermap.org/img/wn/"+data.weather[0].icon+"@2x.png'>";
-			
-			// // var icon = "<img src='icons/black/png/256x256/"+data.weather[0].icon+".png'>";
-			// document.getElementById("icons_weather").innerHTML = icon;
-
-			var add = "<i class='fas fa-map-marker-alt'></i> "+name_city+". <span style='color: #b0b0b1;font-size: 10px;'>"+data.sys.country+"</span>";
+			var add = "<i class='fas fa-map-marker-alt'></i> "+name_city+". <span style='color: #b0b0b1;font-size: 10px;'>" + data.sys.country + "</span>";
 			document.getElementById("add").innerHTML = add;
 
 			var icons_weather = "<img style='margin-top: -30px;' src='img/animated/"+data.weather[0].icon+".svg'>";
@@ -84,10 +71,10 @@ function call_api(name_city){
 
 			var sunset = new Date(data.sys.sunset*1000).toLocaleTimeString("en-US", options);
 			document.getElementById("sunset").innerHTML = sunset;
-
+			
 			document.getElementById("icon-home").style.color = "white";
 		});
-    var url = "https://api.openweathermap.org/data/2.5/forecast?q="+name_city+"&units=metric&cnt=17&appid="+api_key;
+    var url = "https://api.openweathermap.org/data/2.5/forecast?q=" + name_city + "&units=metric&cnt=17&appid=" + api_key;
     fetch(url)
 		.then(response => {
 			return response.json();
@@ -116,7 +103,7 @@ function call_api(name_city){
               }
             });
             document.getElementById("next-day").innerHTML = wf;
-        }
+
     });
     return true;
 }
