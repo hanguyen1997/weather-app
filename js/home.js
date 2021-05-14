@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	var options = {year: 'numeric', day: 'numeric', month: 'long'};
 	var today  = new Date();
 	document.getElementById("time").innerHTML = today.toLocaleDateString("en-US", options);
@@ -25,7 +26,7 @@ $(document).ready(function(){
 					document.getElementById("container-view").style.display = "block"
 				}
 				setTimeout (call_api(trani), 300);
-				
+
 				//document.getElementById("loading").style.display = "none";
 				//setTimeout (document.getElementById("loading").style.display = "none", 3);
 				//setTimeout (document.getElementById("container-view").style.display = "block", 3);
@@ -52,6 +53,19 @@ function call_api(name_city){
 			return response.json();
 		})
 		.then(data => {
+			// /*not found city*/
+			// if(data.cod == "404"){
+			// 	document.getElementById("notify-projcet").innerHTML = "<p>City not found</p>";
+			// 	return;
+			// }
+			// else document.getElementById("notify-projcet").innerHTML = "";
+			// /*end: if(data.code == "404")*/
+
+			// var icon = "<img src='http://openweathermap.org/img/wn/"+data.weather[0].icon+"@2x.png'>";
+			
+			// // var icon = "<img src='icons/black/png/256x256/"+data.weather[0].icon+".png'>";
+			// document.getElementById("icons_weather").innerHTML = icon;
+
 			var add = "<i class='fas fa-map-marker-alt'></i> "+name_city+". <span style='color: #b0b0b1;font-size: 10px;'>"+data.sys.country+"</span>";
 			document.getElementById("add").innerHTML = add;
 
@@ -70,23 +84,16 @@ function call_api(name_city){
 
 			var sunset = new Date(data.sys.sunset*1000).toLocaleTimeString("en-US", options);
 			document.getElementById("sunset").innerHTML = sunset;
-			
+
 			document.getElementById("icon-home").style.color = "white";
 		});
-
-    var url = "https://api.openweathermap.org/data/2.5/forecast";
-    $.ajax({
-        url: url, //API Call
-        dataType: "json",
-        type: "GET",
-        data: {
-            q: name_city,
-            appid: api_key,
-            units: "metric",
-            cnt: "17"
-        },
-        success: function(data) {
-            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    var url = "https://api.openweathermap.org/data/2.5/forecast?q="+name_city+"&units=metric&cnt=17&appid="+api_key;
+    fetch(url)
+		.then(response => {
+			return response.json();
+		})
+		.then(data => {
+			const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
             const timesToDisplay = [0, 8, 16];
             let d;
             let dayName ;
