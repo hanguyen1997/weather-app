@@ -6,111 +6,133 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script src="js/jquery.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="body">
 		<div class="container">
-			<div class="home">
-				<div class="home-header">
-					<div class="home-header_add_time">
-						<p class="time" id="time">N/A</p>
-						<p class="add" id="add">N/A</p>
-					</div>
-					<div class="home-header_theme">
-						<div class="theme">
-							<div class="them-light">
-								<i class="far fa-sun"></i>
+			<div class="container-loading" id="loading">
+			  <img id="loading-image" src="img/load.gif" alt="Loading..." />
+			</div>
+			<div class="container-view" id="container-view">
+				<div class="container-view_main">
+					<div class="home" id="home">
+						<div class="home-header">
+							<div class="home-header_add_time">
+								<p class="time" id="time">N/A</p>
+								<p class="add" id="add">N/A</p>
 							</div>
-							<div class="them-dark">
-								<i class="fas fa-moon"></i>
+							<div class="home-header_theme">
+								<div class="theme">
+									<div class="them-light">
+										<i class="far fa-sun"></i>
+									</div>
+									<div class="them-dark">
+										<i class="fas fa-moon"></i>
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="home-main">
-					<div class="img-w" id="icons_weather">
-						<img style="margin-top: 14px; margin-left:63px; width:150px; height:150px" src="img/load.jpg">
-					</div>
-					<div class="temperature">
-						<h1 id="description"></h1>
-						<h2 id="content_weather">N/A</h2>
-					</div>
-				</div>
+						<div class="home-main">
+							<div class="img-w" id="icons_weather">
+								<img style="margin-top: 14px; margin-left:63px; width:150px; height:150px" src="img/load.jpg">
+							</div>
+							<div class="temperature">
+								<h1 id="description"></h1>
+								<h2 id="content_weather">N/A</h2>
+							</div>
+						</div>
 
-				<div class="the-sun">
-					<div class="box-the-sun">
-						<div class="sun-on">
-							<div class="sun-img">
-								<img  src="img/sun-on.png">
+						<div class="the-sun">
+							<div class="box-the-sun">
+								<div class="sun-on">
+									<div class="sun-img">
+										<img  src="img/sun-on.png">
+									</div>
+									<p class="time-sun" id="sunrise">N/A</p>
+								</div>
 							</div>
-							<p class="time-sun" id="sunrise">N/A</p>
-						</div>
-					</div>
-					<div class="box-the-sun">
-						<div class="sun-off">
-							<div class="sun-img">
-								<img src="img/sun-off.png">
+							<div class="box-the-sun">
+								<div class="sun-off">
+									<div class="sun-img">
+										<img src="img/sun-off.png">
+									</div>
+									<p class="time-sun" id="sunset">N/A</p>
+								</div>
 							</div>
-							<p class="time-sun" id="sunset">N/A</p>
+						</div>
+						<div class="home-description" id="next-day">
+							<div class="description-box">
+								<div class="description-box_img">
+									<img src="img/load.jpg">
+								</div>
+								<div class="description-box_time">
+									<p>n/a</p>
+								</div>
+								<div class="description-box_temperature">
+									<h2>0°</h2>
+								</div>
+							</div>
+							<div class="description-box">
+								<div class="description-box_img">
+									<img src="img/load.jpg">
+								</div>
+								<div class="description-box_time">
+									<p>n/a</p>
+								</div>
+								<div class="description-box_temperature">
+									<h2>0°</h2>
+								</div>
+							</div>
+							<div class="description-box">
+								<div class="description-box_img">
+									<img src="img/load.jpg">
+								</div>
+								<div class="description-box_time">
+									<p>n/a</p>
+								</div>
+								<div class="description-box_temperature">
+									<h2>0°</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="search" id="search">
+						
+					</div>
+					<div class="about" id="about">
+						<h2 class="about-title">About</h2>
+						<p>App  Weather Application made with HTML / CSS / JS</p>
+						<p>This is a personal project built in my spare time for learning purposes.</p>
+						<h2 class="about-title">APIs</h2>
+						<ul class="about-list_api">
+							<li><a href="https://www.ipify.org/">Ipify (ip address)</a></li>
+							<li><a href="https://openweathermap.org/">Openweathermap (weather forecasting)</a></li>
+						</ul>
+						<div class="img-git">
+							<a href="https://github.com/hanguyen1997">
+								<img src="img/github.svg">
+							</a>
+						</div>
+					</div>
+					<div class="container-view_control">
+						<div class="home-control">
+							<div>
+								<i class="fas fa-home" onclick="home()" id="icon-home"></i>
+							</div>
+							<div>
+								<i class="fas fa-search" onclick="search()" id="icon-search"></i>
+							</div>
+							<div>
+								<i class="fas fa-user" onclick="about()" id="icon-about"></i>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="home-description" id="next-day">
-					<div class="description-box">
-						<div class="description-box_img">
-							<img src="img/load.jpg">
-						</div>
-						<div class="description-box_time">
-							<p>n/a</p>
-						</div>
-						<div class="description-box_temperature">
-							<h2>0°</h2>
-						</div>
-					</div>
-					<div class="description-box">
-						<div class="description-box_img">
-							<img src="img/load.jpg">
-						</div>
-						<div class="description-box_time">
-							<p>n/a</p>
-						</div>
-						<div class="description-box_temperature">
-							<h2>0°</h2>
-						</div>
-					</div>
-					<div class="description-box">
-						<div class="description-box_img">
-							<img src="img/load.jpg">
-						</div>
-						<div class="description-box_time">
-							<p>n/a</p>
-						</div>
-						<div class="description-box_temperature">
-							<h2>0°</h2>
-						</div>
-					</div>
-				</div>
-				<div class="home-control">
-					<div>
-						<i class="fas fa-home" style="color: white"></i>
-					</div>
-					<div>
-						<i class="fas fa-search"></i>
-					</div>
-					<div>
-						<i class="fas fa-user"></i>
-					</div>
-				</div>
-			</div>
-			<div class="search">
-				
-			</div>
-			<div class="about">
-				
 			</div>
 		</div>
 	</div>
 	<script src="js/home.js"></script>
+	<script src="js/about.js"></script>
 </body>
 </html>
