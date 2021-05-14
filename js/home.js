@@ -89,12 +89,12 @@ function call_api(name_city){
             const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
             const timesToDisplay = [0, 8, 16];
             let d;
-            let dayName;
+            let dayName ;
             var wf = "";
             $.each(data.list, function(index, val) {
               if(timesToDisplay.includes(index)){
                 d = new Date(data.list[index].dt * 1000);
-                dayName = days[d.getDay()];
+                dayName = days[d.getDay() + 1 ];
                 wf +=   "<div class='description-box'>"
 				wf +=   "<div class='description-box_img'>"
 				wf +=	"<img src='img/animated/"+ val.weather[0].icon+".svg'>"
