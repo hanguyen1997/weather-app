@@ -47,7 +47,7 @@ function home() {
 function call_api(name_city){
 	var api_key = "8a6782a545b721813285b2fb2f7fc8a2";
 	var kelvin = 273;
-	var api_weather = "http://api.openweathermap.org/data/2.5/weather?q="+name_city+"&appid="+api_key;
+	var api_weather = "https://api.openweathermap.org/data/2.5/weather?q="+name_city+"&appid="+api_key;
 	fetch(api_weather)
 		.then(response => {
 			return response.json();
