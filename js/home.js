@@ -17,7 +17,6 @@ $(document).ready(function(){
 			.then(data => {
 				console.log(data);
 				// name_city = data.city
-				console.log(data.city);
 				call_api(data.city);
 
 				let trani = function() {
